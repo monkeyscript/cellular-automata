@@ -1,0 +1,7 @@
+.cell{
+    display: table-cell;
+    width: 2vw;
+    height: 2vw;
+    cursor: pointer;
+    border-radius: 4px;
+}

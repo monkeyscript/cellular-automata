@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-color: #303030;
+}
+
+p{
+    color: white;
+}
+
+a{
+    color: white;
+}
+
+.m-1{
+    margin: .25rem !important;
+}
+
+.m-2{
+    margin: .5rem !important;
+}
+
+.m-3{
+    margin: 1rem !important;
+}
+
+.mx-1{
+    margin-left: .25rem !important;
+    margin-right: .25rem !important;
+}
+
+.mx-2{
+    margin-left: .5rem !important;
+    margin-right: .5rem !important;
+}
+
+.mx-3{
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+}
+
+.my-1{
+    margin-top: .25rem !important;
+    margin-bottom: .25rem !important;
+}
+
+.my-2{
+    margin-top: .5rem !important;
+    margin-bottom: .5rem !important;
+}
+
+.my-3{
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}

@@ -1,0 +1,37 @@
+<mat-card class="my-3">
+    <mat-card-header>
+        <mat-card-title>Conway's Game of Life</mat-card-title>
+        <a matTooltip="Wikipedia" target="_blank" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">
+            <mat-icon>link</mat-icon>
+        </a>
+    </mat-card-header>
+    <div style="margin-left: -16px; margin-right: -16px; margin-bottom: 1rem;background-color: #303030;">
+        <div *ngFor="let row of data;let i=index;">
+            <div 
+                matTooltip="Click to toggle state"
+                class="cell" 
+                (click)="item.state=!item.state" 
+                [ngStyle]="{'background-color': item.state ? '#c2185b' : 'transparent'}" 
+                *ngFor="let item of row;let j=index;">
+            </div>
+        </div>
+    </div>
+    <mat-card-content>
+        <p>
+            The Game of Life is a cellular automaton and a zero-player game devised by mathematician John Horton Conway. It takes place on a two-dimensional grid in which cells can be alive or dead, and is defined by a set of rules that jointly determine the state of a cell given the state of its neighbours.
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button matTooltip="Play" (click)="play()">
+            <mat-icon>play_circle_outline</mat-icon>
+
+        </button>
+        <button mat-button matTooltip="Pause" (click)="pause()">
+            <mat-icon>pause_circle_outline</mat-icon>
+
+        </button>
+        <button mat-button matTooltip="Restart" (click)="restart()">
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>
