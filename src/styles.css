@@ -27,6 +27,10 @@ a{
     margin: 1rem !important;
 }
 
+.m-4{
+    margin: 1.5rem !important;
+}
+
 .mx-1{
     margin-left: .25rem !important;
     margin-right: .25rem !important;
@@ -42,6 +46,11 @@ a{
     margin-right: 1rem !important;
 }
 
+.mx-4{
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+}
+
 .my-1{
     margin-top: .25rem !important;
     margin-bottom: .25rem !important;
@@ -55,4 +64,9 @@ a{
 .my-3{
     margin-top: 1rem !important;
     margin-bottom: 1rem !important;
+}
+
+.my-4{
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
 }
