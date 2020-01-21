@@ -9,8 +9,6 @@ export class ConwaysGameOfLifeComponent implements OnInit {
 
   // Cell data 
   data : {
-    x : number,
-    y : number,
     state : boolean
   }[][] = [];
 
@@ -39,16 +37,12 @@ export class ConwaysGameOfLifeComponent implements OnInit {
     for(var i=0;i<20;i++){
       // Generate row 
       let row : {
-        x : number,
-        y : number,
         state : boolean
       }[] = [];
       // 40 columns 
       for(var j=0;j<40;j++){
         // Add cell 
         row.push({
-          x : i,
-          y : j,
           state : (Math.random() >= 0.90) 
         })
       }
@@ -61,55 +55,55 @@ export class ConwaysGameOfLifeComponent implements OnInit {
   // Increement generation i.e. update cell states
   //
   nextGeneration(){
+    // Temp array for cloning 
+    let tempArr = JSON.parse(JSON.stringify(this.data))
     // Iterate over cells 
-    this.data.forEach(
-      row => {
-        row.forEach(
-          cell => {
-            // Flag for live neighbour cell count 
-            let s = 0;
-            // Find surrounding state 
-            if( (cell.x-1!=-1) && (cell.x+1!=20) && (cell.y-1!=-1) && (cell.y+1!=40)){
-              if(this.data[cell.x-1][cell.y-1].state){
-                s++;
-              }
-              if(this.data[cell.x-1][cell.y].state){
-                s++;
-              }
-              if(this.data[cell.x-1][cell.y+1].state){
-                s++;
-              }
-              if(this.data[cell.x][cell.y-1].state){
-                s++;
-              }
-              if(this.data[cell.x][cell.y+1].state){
-                s++;
-              }
-              if(this.data[cell.x+1][cell.y-1].state){
-                s++;
-              }
-              if(this.data[cell.x+1][cell.y].state){
-                s++;
-              }
-              if(this.data[cell.x+1][cell.y+1].state){
-                s++;
-              }
-            }
-            // Set new state 
-            if(cell.state==true && (s==2 || s==3)){
-              // Any live cell with two or three neighbors survives 
-              cell.state = true;
-            }else if(cell.state==false && s==3){
-              // Any dead cell with three live neighbors becomes a live cell
-              cell.state = true
-            }else{
-              // All other live cells die in the next generation. Similarly, all other dead cells stay dead
-              cell.state = false;
-            }
+    for(let i=0;i<this.data.length;i++){
+      for(let j=0;j<this.data[i].length;j++){
+        // Flag for live neighbour cell count 
+        let s = 0;
+        // Find surrounding state 
+        if( (i-1!=-1) && (i+1!=20) && (j-1!=-1) && (j+1!=40)){
+          if(this.data[i-1][j-1].state){
+            s++;
           }
-        ) 
+          if(this.data[i-1][j].state){
+            s++;
+          }
+          if(this.data[i-1][j+1].state){
+            s++;
+          }
+          if(this.data[i][j-1].state){
+            s++;
+          }
+          if(this.data[i][j+1].state){
+            s++;
+          }
+          if(this.data[i+1][j-1].state){
+            s++;
+          }
+          if(this.data[i+1][j].state){
+            s++;
+          }
+          if(this.data[i+1][j+1].state){
+            s++;
+          }
+        }
+        // Set new state 
+        if(this.data[i][j].state==true && (s==2 || s==3)){
+          // Any live cell with two or three neighbors survives 
+          tempArr[i][j].state = true;
+        }else if(this.data[i][j].state==false && s==3){
+          // Any dead cell with three live neighbors becomes a live cell
+          tempArr[i][j].state = true
+        }else{
+          // All other live cells die in the next generation. Similarly, all other dead cells stay dead
+          tempArr[i][j].state = false;
+        }
       }
-    )
+    }
+    // Copy back 
+    this.data = tempArr;
   }
 
   //
