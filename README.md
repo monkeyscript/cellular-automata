@@ -1,27 +1,15 @@
-# CellularAutomata
+# Cellular Automata
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
+Cellular automaton is a collection of cells on a grid that evolves through a series of steps under simple rules governing their replication and destruction.
 
-## Development server
+## Conway's Game of Life
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The Game of Life is a cellular automaton and a zero-player game devised by mathematician John Horton Conway. It takes place on a two-dimensional grid in which cells can be alive or dead, and is defined by a set of rules that jointly determine the state of a cell given the state of its neighbours. The initial states are random and can achieve stochastic patterns. You may get some cool ones if you're lucky :)
 
-## Code scaffolding
+[https://en.wikipedia.org/wiki/Conway's_Game_of_Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Langton's ant
 
-## Build
+Langton's ant is another cellular automaton invented by Chris Langton in 1986. It is basically an ant sitting on a cell grid and the state of cells and movement of ant are governed by a simple set of rules. Unlink game of life, the patterns of this automaton are predictable and limited.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[https://en.wikipedia.org/wiki/Langton's_ant](https://en.wikipedia.org/wiki/Langton's_ant)
