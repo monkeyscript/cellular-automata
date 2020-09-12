@@ -5,16 +5,18 @@
             <mat-icon>link</mat-icon>
         </a>
     </mat-card-header>
-    <div style="margin-left: -16px; margin-right: -16px; margin-bottom: 1rem;border-top: 1px solid lightgray; border-bottom: 1px solid lightgray;">
+    <div style="margin-left: -16px; margin-right: -16px; margin-bottom: 1rem;border: 1px solid lightgray;">
         <div *ngFor="let row of data;let i=index;">
             <div 
                 class="cell" 
-                [ngStyle]="{'background-color': item.state ? '#ffd740' : 'transparent'}" 
+                [ngStyle]="{'background-color': item.state ? '#ffd740' : '#f7f7f7'}" 
                 *ngFor="let item of row;let j=index;">
-                <mat-icon style="position: absolute;" *ngIf="ant.x==item.x && ant.y==item.y && ant.direction=='NORTH'">arrow_drop_up</mat-icon>
-                <mat-icon style="position: absolute;" *ngIf="ant.x==item.x && ant.y==item.y && ant.direction=='EAST'">arrow_right</mat-icon>
-                <mat-icon style="position: absolute;" *ngIf="ant.x==item.x && ant.y==item.y && ant.direction=='WEST'">arrow_left</mat-icon>
-                <mat-icon style="position: absolute;" *ngIf="ant.x==item.x && ant.y==item.y && ant.direction=='SOUTH'">arrow_drop_down</mat-icon>
+                <div style="display:flex;height:100%;align-items:center;justify-content:center">
+                    <mat-icon *ngIf="ant.x==item.x && ant.y==item.y && ant.direction=='NORTH'">arrow_drop_up</mat-icon>
+                    <mat-icon *ngIf="ant.x==item.x && ant.y==item.y && ant.direction=='EAST'">arrow_right</mat-icon>
+                    <mat-icon *ngIf="ant.x==item.x && ant.y==item.y && ant.direction=='WEST'">arrow_left</mat-icon>
+                    <mat-icon *ngIf="ant.x==item.x && ant.y==item.y && ant.direction=='SOUTH'">arrow_drop_down</mat-icon>
+                </div>
             </div>
         </div>
     </div>
