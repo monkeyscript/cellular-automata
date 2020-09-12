@@ -5,11 +5,11 @@
             <mat-icon>link</mat-icon>
         </a>
     </mat-card-header>
-    <div style="margin-left: -16px; margin-right: -16px; margin-bottom: 1rem;background-color: #303030;">
+    <div style="margin-left: -16px; margin-right: -16px; margin-bottom: 1rem;border-top: 1px solid lightgray; border-bottom: 1px solid lightgray;">
         <div *ngFor="let row of data;let i=index;">
             <div 
                 class="cell" 
-                [ngStyle]="{'background-color': item.state ? '#c2185b' : 'transparent'}" 
+                [ngStyle]="{'background-color': item.state ? '#ffd740' : 'transparent'}" 
                 *ngFor="let item of row;let j=index;">
                 <mat-icon style="position: absolute;" *ngIf="ant.x==item.x && ant.y==item.y && ant.direction=='NORTH'">arrow_drop_up</mat-icon>
                 <mat-icon style="position: absolute;" *ngIf="ant.x==item.x && ant.y==item.y && ant.direction=='EAST'">arrow_right</mat-icon>
@@ -24,15 +24,13 @@
         </p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button matTooltip="Play" (click)="play()">
+        <button mat-raised-button color="primary" matTooltip="Play" (click)="play()">
             <mat-icon>play_circle_outline</mat-icon>
-
         </button>
-        <button mat-button matTooltip="Pause" (click)="pause()">
+        <button mat-raised-button color="primary" matTooltip="Pause" (click)="pause()">
             <mat-icon>pause_circle_outline</mat-icon>
-
         </button>
-        <button mat-button matTooltip="Restart" (click)="restart()">
+        <button mat-raised-button color="primary" matTooltip="Restart" (click)="restart()">
             <mat-icon>refresh</mat-icon>
         </button>
     </mat-card-actions>
