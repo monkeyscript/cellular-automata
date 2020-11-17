@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ConwaysGameOfLifeComponent } from './conways-game-of-life.component';
 
@@ -6,7 +6,7 @@ describe('ConwaysGameOfLifeComponent', () => {
   let component: ConwaysGameOfLifeComponent;
   let fixture: ComponentFixture<ConwaysGameOfLifeComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ConwaysGameOfLifeComponent ]
     })
